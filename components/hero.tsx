@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { heroVideo, smallHeroVideo } from "../utils";
+import { heroVideo, smallHeroVideo } from "../app/utils";
 import Link from "next/link";
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(

@@ -4,7 +4,7 @@ import { hightlightsSlides } from "@/constants";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import { pauseImg, playImg, replayImg } from "../utils";
+import { pauseImg, playImg, replayImg } from "../app/utils";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 

@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import React from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import { rightImg, watchImg } from "../utils";
+import { rightImg, watchImg } from "../app/utils";
 import Link from "next/link";
 import VideoCarousel from "./videoCarousel";
 const Highlights = () => {
