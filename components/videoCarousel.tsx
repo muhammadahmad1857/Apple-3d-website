@@ -1,5 +1,4 @@
-
-
+"use client";
 import { hightlightsSlides } from "@/constants";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
