@@ -4,9 +4,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { heroVideo, smallHeroVideo } from "../app/utils";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
+
 const Hero = () => {
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 760px)" });
   const [videoSrc, setVideoSrc] = useState(
-    window.innerWidth < 760 ? smallHeroVideo : heroVideo,
+    isSmallScreen ? smallHeroVideo : heroVideo,
   );
   const handleVideoChange = () => {
     if (window.innerWidth < 760) {
@@ -14,13 +17,12 @@ const Hero = () => {
     } else {
       setVideoSrc(heroVideo);
     }
+    console.log(isSmallScreen);
+
   };
   useEffect(() => {
-    window.addEventListener("resize", handleVideoChange);
-    return () => {
-      window.removeEventListener("resize", handleVideoChange);
-    };
-  }, []);
+   handleVideoChange()
+  }, [isSmallScreen]);
   useGSAP(() => {
     gsap.to("#hero", {
       opacity: 1,
@@ -38,13 +40,13 @@ const Hero = () => {
         <p id="hero" className="hero-title">
           Iphone 15 pro
         </p>
-        <div className="w-9/12 md:w-10/12">
+        <div className="flex max-h-[calc(100%-100px)] w-9/12 items-center justify-center md:w-10/12">
           <video
             autoPlay
             muted
             playsInline={true}
             key={videoSrc}
-            className="pointer-events-none"
+            className="pointer-events-none h-full"
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
